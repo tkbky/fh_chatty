@@ -1,0 +1,26 @@
+.channel-index {
+  h1 {
+    color: #27ae60;
+  }
+
+  h4 {
+    text-transform: uppercase;
+
+    a {
+      margin-left: 10px;
+    }
+  }
+
+  ul.channel-list {
+    font-size: 16px;
+  }
+}
+
+.channel-show {
+  .channel-board {
+    padding: 30px;
+    background-color: aliceblue;
+    border-radius: 6px;
+    margin-bottom: 5px;
+  }
+}

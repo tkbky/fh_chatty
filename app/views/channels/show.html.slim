@@ -1,0 +1,22 @@
+.container-fluid.channel-show
+  .row
+    .col-xs-12.col-sm-4.col-sm-offset-4
+      h3 ##{@channel.name}
+    
+      .channel-board
+        = render @channel.messages
+      .channel-input
+        = render partial: 'messages/form', locals: { channel: @channel }
+      javascript:
+        new Firehose.Consumer({
+          message: function(msg) {
+            var message = new Message(msg.text);
+            $('.channel-board').append(message.to_html());
+          },
+          
+          connected: function() {
+            console.log('connected!');
+          },
+          
+          uri: '//localhost:7474/#{@channel.name}'
+        }).connect();

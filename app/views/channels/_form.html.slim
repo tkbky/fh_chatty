@@ -1,0 +1,5 @@
+= form_for Channel.new, html: { class: 'form' } do |f|
+  .form-group
+    = f.text_field :name, class: 'form-control', placeholder: 'Channel Name'
+  .form-group
+    = f.submit 'Create Channel', class: 'btn btn-default'

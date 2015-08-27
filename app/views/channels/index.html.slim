@@ -1,0 +1,22 @@
+.container-fluid.channel-index
+  .row
+    .col-xs-12.col-sm-4.col-sm-offset-4
+      h1 Next Chat
+      h4 
+        | Channels
+        a href='#' data-toggle='modal' data-target='#new_channel_modal'
+            i.fa.fa-plus-circle
+      ul.channel-list.list-unstyled
+        - @channels.each do |channel|
+          li = link_to "##{channel.name}", channel
+
+
+.modal.fade#new_channel_modal tabindex='-1'
+  .modal-dialog
+    .modal-content
+      .modal-header
+        button type='button' class='close' data-dismiss='modal'
+          span aria-hidden='true' &times;
+        h4.modal-title New Channel
+      .modal-body
+        = render 'channels/form'
