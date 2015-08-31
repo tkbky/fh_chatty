@@ -4,10 +4,5 @@ Rails.application.routes.draw do
   resources :channels, only: [:index, :new, :create, :show]
   resources :messages, only: :create
   resources :registrations, only: [:new, :create, :edit, :update]
-  resources :sessions, only: :create do
-    collection do
-      get :new
-      delete :destroy
-    end
-  end
+  resources :sessions, only: [:new, :create, :destroy]
 end

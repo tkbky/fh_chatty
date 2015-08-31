@@ -3,7 +3,7 @@ class SessionsController < ApplicationController
   end
 
   def create
-    if @user = login(params[:email], params[:password])
+    if login(params[:email], params[:password])
       redirect_back_or_to channels_path, notice: 'Welcome!'
     else
       flash[:error] = 'Something is wrong!'

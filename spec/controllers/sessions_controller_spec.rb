@@ -36,7 +36,7 @@ RSpec.describe SessionsController, type: :controller do
 
     before do
       login_user(user)
-      delete :destroy
+      delete :destroy, id: user.id
     end
 
     it { expect(response).to redirect_to(root_path) }
