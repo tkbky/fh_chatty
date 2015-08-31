@@ -18,6 +18,7 @@ gem 'growlyflash'
 
 gem 'firehose'
 gem 'rainbows', require: false
+gem 'sorcery'
 
 group :development, :test do
   gem 'byebug'
