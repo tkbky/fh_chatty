@@ -19,6 +19,8 @@ module FhChatty
   class Application < Rails::Application
     config.active_record.raise_in_transactional_callbacks = true
     config.generators do |g|
+      g.test_framework :rspec,
+        view_specs: false
       g.helper false
       g.stylesheets false
       g.javascripts false
