@@ -9,3 +9,6 @@ html
     = csrf_meta_tags
   body
     = yield
+    javascript:
+      window.GATracker.init()
+      window.UATracker.init()

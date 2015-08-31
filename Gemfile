@@ -19,6 +19,7 @@ gem 'growlyflash'
 gem 'firehose'
 gem 'rainbows', require: false
 gem 'sorcery'
+gem 'ga_cookie_parser'
 
 group :development, :test do
   gem 'byebug'
