@@ -3,6 +3,13 @@ Rails.application.routes.draw do
 
   resources :channels, only: [:index, :new, :create, :show]
   resources :messages, only: :create
-  resources :registrations, only: [:new, :create, :edit, :update]
-  resources :sessions, only: [:new, :create, :destroy]
+
+  # Registrations
+  resources :registrations, only: [:create, :edit, :update]
+  get '/signup' => 'registrations#new', as: :sign_up
+
+  # Sessions
+  resources :sessions, only: :create
+  get '/signin' => 'sessions#new', as: :sign_in
+  delete '/signout' => 'sessions#destroy', as: :sign_out
 end

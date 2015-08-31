@@ -2,6 +2,8 @@
   .row
     .col-xs-12.col-sm-4.col-sm-offset-4
       h1 Next Chat
+      - if logged_in?
+        = link_to 'Sign Out', sign_out_path, method: :delete
       h4 
         | Channels
         a href='#' data-toggle='modal' data-target='#new_channel_modal'
