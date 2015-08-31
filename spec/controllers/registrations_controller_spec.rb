@@ -15,7 +15,7 @@ RSpec.describe RegistrationsController, type: :controller do
       let(:params) { attributes_for(:user) }
 
       it { expect(assigns(:user)).to be_persisted }
-      it { expect(response).to redirect_to channels_path }
+      it { expect(response).to redirect_to(channels_path) }
     end
 
     context 'with blank email' do
@@ -64,7 +64,7 @@ RSpec.describe RegistrationsController, type: :controller do
       let(:params) { attributes_for(:user, email: 'new@example.com') }
 
       it { expect(assigns(:user).email).to eq 'new@example.com' }
-      it { expect(response).to redirect_to channels_path }
+      it { expect(response).to redirect_to(channels_path) }
     end
   end
 end
