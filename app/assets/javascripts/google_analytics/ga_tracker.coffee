@@ -1,15 +1,15 @@
 class GATracker
   @init: ->
-    _gaq = _gaq or []
-    _gaq.push [
+    window._gaq = window._gaq or []
+    window._gaq.push [
       '_setAccount'
       'UA-66954312-1'
     ]
-    _gaq.push [
+    window._gaq.push [
       '_setDomainName'
       'none'
     ]
-    _gaq.push [ '_trackPageview' ]
+    window._gaq.push [ '_trackPageview' ]
     do ->
       ga = document.createElement('script')
       ga.type = 'text/javascript'
