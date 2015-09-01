@@ -10,7 +10,38 @@
         - @channels.each do |channel|
           li = link_to "##{channel.name}", channel
 
-
+  .row
+    .col-xs-12.col-sm-4.col-sm-offset-4
+      h3 Google Analytics Info
+      table.table.table-bordered
+        tr
+          th Campaign Source
+          td = @ga_parser.campaign_source
+        tr
+          th Campaign Name
+          td = @ga_parser.campaign_name
+        tr
+          th Campaign Medium
+          td = @ga_parser.campaign_medium
+        tr  
+          th Campaign Content
+          td = @ga_parser.campaign_content
+        tr  
+          th Campaign Term
+          td = @ga_parser.campaign_term
+        tr  
+          th Date of First Visit
+          td = @ga_parser.date_of_first_visit
+        tr  
+          th Date of Previous Visit
+          td = @ga_parser.date_of_previous_visit
+        tr  
+          th Times Visit
+          td = @ga_parser.times_visited
+        tr  
+          th Pages Viewed
+          td = @ga_parser.pages_viewed
+          
 .modal.fade#new_channel_modal tabindex='-1'
   .modal-dialog
     .modal-content

@@ -1,10 +1,7 @@
 class ChannelsController < ApplicationController
   def index
     @channels = Channel.all
-    utmz = cookies["__utmz"]
-    utmb = cookies["__utmb"]
-    utma = cookies["__utma"]
-    @data = GaCookieParser::GaCookieParser.new(:utmz => utmz, :utmb => utmb, :utma => utma)
+    @ga_parser = GAParser.new(cookies).parse
   end
 
   def create
