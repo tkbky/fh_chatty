@@ -16,8 +16,16 @@ gem 'bootstrap-sass'
 gem 'font-awesome-rails'
 gem 'growlyflash'
 
+# json response
+gem 'active_model_serializers'
+# rspec api testing
+gem 'airborne'
+
+# real time
 gem 'firehose'
 gem 'rainbows', require: false
+
+# authentication
 gem 'sorcery'
 
 group :development, :test do
